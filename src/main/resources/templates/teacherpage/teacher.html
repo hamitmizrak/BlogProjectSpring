@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{/js/index1.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/style1.css}">
+    <link>
+
+</head>
+<body>
+<h1>#{isim}</h1>
+sonuc:  <b><label th:text="${message}"></label></b>
+
+teacherId
+teacherName
+teacherPrice
+th:object: key
+th:action: @GetMapping
+
+
+<form  th:method="post"  th:object="${key_teacher}"  th:action="@{/create/teacher}" >
+    <ul>
+        <li th:each="error:${#fields.errors('all')}"  th:text="${error}"></li>
+    </ul>
+    <p>ID</p>
+    <input  type="text" id="teacherId" disabled="disabled" th:field="*{teacherId}"/><br/>
+    <p>NAME</p>
+    <input type="text" id="teacherName" th:field="*{teacherName}"/><br/>
+    <span th:if="${#fields.hasErrors('teacherName')}"  th:errors="*{teacherName}"></span>
+    <p>TRADE</p>
+    <input type="text" id="productTrade" th:field="*{teacherPrice}"/><br/>
+    <span th:if="${#fields.hasErrors('teacherPrice')}"  th:errors="*{teacherPrice}"></span>
+    <input type="submit" /><br/>
+</form>
+
+</body>
+</html>
