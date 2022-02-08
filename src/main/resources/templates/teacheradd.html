@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Teacher List</title>
+    <title>Teacher Add</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -12,27 +12,27 @@
     <!--thymeleaf js-->
     <script th:src="@{/js/template2.js}"></script>
 </head>
-<body>
-<h1>#{isim}</h1>
-sonuc:  <b><label th:text="${message}"></label></b>
+<body class="container">
+<!--th:object: key
+th:action: @GetMapping-->
+<p class="text-center text-primary display-4 text-uppercase" th:text="#{form}"></p>
+<a th:text="#{add}" th:href="@{/create/teacher}" class="bg-dark  btn btn-primary btn-sm mb-3"></a>
+<a th:text="#{list}" th:href="@{/list/teacher}" class="bg-dark  btn btn-primary btn-sm mb-3"></a>
 
-th:object: key
-th:action: @GetMapping
-<p th:text="#{adi}"></p>
-
-<form  th:method="post"  th:object="${key_teacher}"  th:action="@{/create/teacher}" >
+<form th:method="post" th:object="${key_teacher}" th:action="@{/create/teacher}">
     <ul>
-        <li th:each="error:${#fields.errors('all')}"  th:text="${error}"></li>
+        <li th:each="error:${#fields.errors('all')}" th:text="${error}"></li>
     </ul>
     <p>ID</p>
-    <input  type="text" id="teacherId" disabled="disabled" th:field="*{teacherId}"/><br/>
+    <input class="form-control" type="text" id="teacherId" disabled="disabled" th:field="*{teacherId}"/><br/>
     <p>NAME</p>
-    <input type="text" id="teacherName" th:field="*{teacherName}"/><br/>
-    <span th:if="${#fields.hasErrors('teacherName')}"  th:errors="*{teacherName}"></span>
+    <input class="form-control" type="text" id="teacherName" th:field="*{teacherName}"/><br/>
+    <span th:if="${#fields.hasErrors('teacherName')}" th:errors="*{teacherName}"></span>
     <p>TRADE</p>
-    <input type="text" id="productTrade" th:field="*{teacherPrice}"/><br/>
-    <span th:if="${#fields.hasErrors('teacherPrice')}"  th:errors="*{teacherPrice}"></span>
-    <input type="submit" /><br/>
+    <input class="form-control" type="text" id="productTrade" th:field="*{teacherPrice}"/><br/>
+    <span th:if="${#fields.hasErrors('teacherPrice')}" th:errors="*{teacherPrice}"></span>
+    <input class="btn btn-primary" type="submit"/>
+    <input class="btn btn-danger" type="reset"/><br/>
 </form>
 
 <!--end codes-->

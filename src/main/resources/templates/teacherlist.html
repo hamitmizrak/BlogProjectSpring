@@ -2,7 +2,7 @@
 <html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Teacher List</title>
     <script th:src="@{/js/index1.js}"></script>
     <link rel="stylesheet" th:href="@{/css/style1.css}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
@@ -10,7 +10,7 @@
 </head>
 <body>
 <p th:text="#{adi}"></p>
-sonuc:  <b><label th:text="${key_message}"></label></b> </br>
+sonuc: <b><label th:text="${key_message}"></label></b> </br>
 
 <!--th:object: key
 th:action: @GetMapping
@@ -21,11 +21,11 @@ date-->
 
 <p th:text="${silindi}" class="display-4"></p>
 <p th:text="${eklendi}" class="display-4"></p>
+<a th:text="#{add}" th:href="@{/create/teacher}" class="bg-dark  btn btn-primary btn-sm mb-3"></a>
+<a th:text="#{list}" th:href="@{/list/teacher}" class="bg-dark  btn btn-primary btn-sm mb-3"></a>
 
-<a th:text="#{add}" th:href="@{/create/teacher}"  class="btn btn-primary btn-sm mb-3"></a>
-
-<table  class = "table  table-dark table-striped table-responsive-md">
-    <thead  class="thead-dark">
+<table class="table  table-dark table-striped table-responsive-md">
+    <thead class="thead-dark">
     <tr>
         <th>teacherId</th>
         <th>teacherName</th>
@@ -41,9 +41,9 @@ date-->
         <td th:text="${alias.getTeacherName()}"></td>
         <td th:text="${alias.getTeacherPrice()}"></td>
         <td th:text="${alias.getDate()}"></td>
-        <td> <a th:text="#{update}" th:href="@{/create/teacher/{id}(id=${alias.getTeacherId()})}"
-                class="btn btn-primary">Update</a> </td>
-        <td>  <a th:text="#{delete}" th:href="@{/delete/teacher/{id}(id=${alias.getTeacherId()})}"
+        <td><a th:text="#{update}" th:href="@{/create/teacher/{id}(id=${alias.getTeacherId()})}"
+               class="btn btn-primary">Update</a></td>
+        <td><a th:text="#{delete}" th:href="@{/delete/teacher/{id}(id=${alias.getTeacherId()})}"
                class="btn btn-danger"></a></td>
     </tr>
 
