@@ -23,13 +23,13 @@ public class TeacherServiceImpl implements TeacherService {
     private ModelMapper modelMapper;
 
 
-
     //create
     @Override
-    public void create(TeacherDto teacherDto) {
+    public void save(TeacherDto teacherDto) {
         TeacherEntity teacherEntity = DtoToEntity(teacherDto);//ModelMapper
         teacherRepository.save(teacherEntity);
     }
+
 
     //delete
     @Override
@@ -45,7 +45,7 @@ public class TeacherServiceImpl implements TeacherService {
         Optional<TeacherEntity> optional = teacherRepository.findById(teacherId);
         if (optional.isPresent()) {
             TeacherEntity teacherEntity = optional.get();
-            teacherDto= EntityToDto(teacherEntity);//ModelMapper
+            teacherDto = EntityToDto(teacherEntity);//ModelMapper
         } else {
             teacherDto = TeacherDto
                     .builder()
@@ -70,13 +70,13 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     //Dynamic modelMapper
-    public TeacherDto EntityToDto(TeacherEntity entity){
-        TeacherDto teacherDto=modelMapper.map(entity,TeacherDto.class);
+    public TeacherDto EntityToDto(TeacherEntity entity) {
+        TeacherDto teacherDto = modelMapper.map(entity, TeacherDto.class);
         return teacherDto;
     }
 
     public TeacherEntity DtoToEntity(TeacherDto dto) {
-        TeacherEntity teacherEntity=modelMapper.map(dto,TeacherEntity.class);
+        TeacherEntity teacherEntity = modelMapper.map(dto, TeacherEntity.class);
         return teacherEntity;
     }
 

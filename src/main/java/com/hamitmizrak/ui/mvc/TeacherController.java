@@ -39,7 +39,7 @@ public class TeacherController {
             return "/teacheradd";
         }
         log.info(teacherDto);
-        teacherService.create(teacherDto);
+        teacherService.save(teacherDto);
         model.addAttribute("eklendi", "Eklendi");
         Iterable<TeacherDto> teacherDtoList = teacherService.list();
         model.addAttribute("key_teacher_list", teacherDtoList);
