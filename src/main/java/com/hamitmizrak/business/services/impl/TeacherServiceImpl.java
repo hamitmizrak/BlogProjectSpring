@@ -18,11 +18,11 @@ public class TeacherServiceImpl implements TeacherService {
     @Autowired
     TeacherRepository teacherRepository;
 
+
+    @Autowired
     private ModelMapper modelMapper;
 
-    public TeacherServiceImpl(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
-    }
+
 
     //create
     @Override
