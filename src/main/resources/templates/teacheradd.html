@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script th:src="@{/js/index1.js}"></script>
-    <link rel="stylesheet" th:href="@{/css/style1.css}">
-    <link>
+    <title>Teacher List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+    <!--thymeleaf css-->
+    <link rel="stylesheet" th:href="@{/css/style2.css}">
+
+    <!--thymeleaf js-->
+    <script th:src="@{/js/template2.js}"></script>
 </head>
 <body>
 <h1>#{isim}</h1>
 sonuc:  <b><label th:text="${message}"></label></b>
 
-teacherId
-teacherName
-teacherPrice
 th:object: key
 th:action: @GetMapping
-
+<p th:text="#{adi}"></p>
 
 <form  th:method="post"  th:object="${key_teacher}"  th:action="@{/create/teacher}" >
     <ul>
@@ -34,5 +35,9 @@ th:action: @GetMapping
     <input type="submit" /><br/>
 </form>
 
+<!--end codes-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
