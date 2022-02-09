@@ -4,6 +4,7 @@ import com.hamitmizrak.data.entity.WriterEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
+
+//1
 public interface WriterRepository extends CrudRepository<WriterEntity,Long> {
 }

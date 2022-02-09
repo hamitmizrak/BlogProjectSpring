@@ -1,11 +1,13 @@
 package com.hamitmizrak.business.dto;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.Date;
 
 @Getter
 @Setter
+@Builder
 public class WriterDto {
 
     private Long writerId;
@@ -13,10 +15,7 @@ public class WriterDto {
     private String writerSurname;
     private Date date;
 
-    //objenin kendisini kullanmadım bazen Objenin hepsini veriliyor sadece Id veya name lazım oluyor.
-    //private WriterDto writerDto;
-    private Long bookId;
-    private String bookName;
+
 
 
 

@@ -9,6 +9,9 @@ import java.util.List;
 public class BookListDto {
 
     List<BookDto> bookDtoList;
+
+    //objenin kendisini kullanmadım bazen Objenin hepsini veriliyor sadece Id veya name lazım oluyor.
+    //private WriterDto writerDto;
     private Long writerId;
     private String writerName;
 

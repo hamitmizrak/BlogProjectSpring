@@ -22,6 +22,15 @@ public class BookEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long bookId;
 
+    public BookEntity() {
+    }
+
+    public BookEntity(Long bookId, String bookName, double price) {
+        this.bookId = bookId;
+        this.bookName = bookName;
+        Price = price;
+    }
+
     //Relation
     @ManyToOne
     @JoinColumn(name = "writerId")

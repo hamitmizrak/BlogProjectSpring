@@ -9,11 +9,8 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-@Setter
-@Getter
-@Builder
-
 //1
+@Getter @Setter
 @Entity
 @Table( name = "writer")
 public class WriterEntity {
@@ -21,6 +18,10 @@ public class WriterEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long writerId;
+
+    public WriterEntity() {
+
+    }
 
     //relation
     @OneToMany(mappedBy = "writerEntity", cascade = CascadeType.ALL)
@@ -32,4 +33,6 @@ public class WriterEntity {
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     private Date date;
+
+
 }

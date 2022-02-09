@@ -9,7 +9,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface BookRepository extends CrudRepository<BookRepository,Long> {
+//N
+public interface BookRepository extends CrudRepository<BookEntity,Long> {
 
     //yazar ID Kitapları getirmek
     @Query("select b from BookEntity b where b.bookId= :bookId")
