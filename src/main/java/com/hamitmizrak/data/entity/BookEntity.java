@@ -9,7 +9,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-@Setter @Getter
+@Setter
+@Getter
 @Builder
 
 //N
