@@ -2,6 +2,7 @@ package com.hamitmizrak.bean;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 //Bean yazmak ve isteyen yerde kullanmaya denilir.
 //Bean görevi elimizde hazır data olsun istediğim yerde kullanabilmek için
@@ -9,7 +10,8 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfiguration {
 
 
-    @Bean
+    @Bean(initMethod = "initializedBean44",destroyMethod = "destroydBean44")
+    @Scope("prototype")
     public BeanSpringExam beanSpringExam() {
         BeanSpringExam beanSpringExam = new BeanSpringExam();
         beanSpringExam.setId(1L);
