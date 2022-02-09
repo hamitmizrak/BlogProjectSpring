@@ -23,7 +23,6 @@
     </properties>
 
     <dependencies>
-
         <!-- swagger-2 -->
         <dependency>
             <groupId>org.springframework.data</groupId>
@@ -144,5 +143,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
