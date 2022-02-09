@@ -22,18 +22,5 @@ import java.util.Date;
 @ApiModel(value = "Dto Swagger Api modelim ",description = "Swagger 2 Mode") //swagger
 //@Valid @NotEmpty(message="")  @Email(message="") @Min(message"" value="")
 public class TeacherDto {
-    @ApiModelProperty(value = "Swagger ID") //swagger
-    private Long teacherId;
 
-    @ApiModelProperty(value = "Swagger TeacherName") //swagger
-    @NotEmpty(message = "adı alanını boş geçemezsiniz")
-    @Size(message = "en fazla 40 karakter girebilirsiniz",min = 1,max = 40)
-    private String teacherName;
-
-    @ApiModelProperty(value = "Swagger TeacherPrice") //swagger
-    @Min(message = "4500 altında yazamazsınız",value = 4500)
-    @Max(message = "12000 üstünde yazamazsınız",value = 12000)
-    private double teacherPrice;
-
-    private Date date;
 }
