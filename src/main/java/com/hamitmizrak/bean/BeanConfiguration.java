@@ -12,6 +12,7 @@ public class BeanConfiguration {
 
     @Bean(initMethod = "initializedBean44",destroyMethod = "destroydBean44")
     @Scope("prototype")
+    //@Scope("request")
     public BeanSpringExam beanSpringExam() {
         BeanSpringExam beanSpringExam = new BeanSpringExam();
         beanSpringExam.setId(1L);
@@ -19,5 +20,7 @@ public class BeanConfiguration {
         beanSpringExam.setSurname("config surname");
         return beanSpringExam;
     }
+
+
 
 }

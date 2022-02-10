@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+@SuppressWarnings("ALL")
 @Controller
 public class BeanMainTest {
 
@@ -15,6 +16,8 @@ public class BeanMainTest {
 
     @Autowired
     BeanSpringExam beanOther;
+
+
 
     // http://localhost:8080/bean
     @GetMapping("/bean")
@@ -29,4 +32,7 @@ public class BeanMainTest {
     public String beanScope() {
         return "scope: "+beanSpringExam.hashCode()+" diğeri: "+beanOther.hashCode();
     }
+
+
+
 }
