@@ -5,7 +5,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 //diger classdaki calissin diye kapattım
-@EnableWebSecurity
+//@EnableWebSecurity
 public class _02_SecurityActiveHttpBasic extends WebSecurityConfigurerAdapter {
 
 

@@ -5,7 +5,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 //diger classdaki calissin diye kapattım
-@EnableWebSecurity
+//@EnableWebSecurity
 public class _01_SecurityPassive extends WebSecurityConfigurerAdapter {
 
     //kapatmak istiyorsam bu metodu yazalım

@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@EnableWebSecurity
+//@EnableWebSecurity
 public class _05_SecurityUserAdd_Encryped extends WebSecurityConfigurerAdapter {
 
     // kullanıcı eklemek

@@ -9,7 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@EnableWebSecurity
+//@EnableWebSecurity
 public class _06_SecurityUserAdd_Encryped_Bean extends WebSecurityConfigurerAdapter {
 
     @Bean //springte diğer kullanıcılarda bu metodu kullansın diye @Bean yaptım.
