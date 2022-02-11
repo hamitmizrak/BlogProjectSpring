@@ -35,6 +35,20 @@ public class SecurityController {
         return "/login";
     }
 
+    // USER
+    // http://localhost:8080/user
+    @GetMapping("/user")
+    @ResponseBody
+    public String getUser() {
+        //Sayfaya giriş yapmış user
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null) {
+            System.out.println(authentication.hashCode());
+            return authentication.getName() + " " + authentication.hashCode();
+        }
+        return "Sistemde giriş yapmış kullaıcı bulunmuyor.";
+    }
+
 
     // LOGIN LOGOUT
     // http://localhost:8080/logout
@@ -52,19 +66,7 @@ public class SecurityController {
     }
 
 
-    // USER
-    // http://localhost:8080/user
-    @GetMapping("/user")
-    @ResponseBody
-    public String getUser() {
-        //Sayfaya giriş yapmış user
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication != null) {
-            System.out.println(authentication.hashCode());
-            return authentication.getName() + " " + authentication.hashCode();
-        }
-        return "Sistemde giriş yapmış kullaıcı bulunmuyor.";
-    }
+
 
 
     // PRIVATE
