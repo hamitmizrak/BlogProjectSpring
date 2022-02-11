@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -38,18 +39,46 @@ public class SecurityController {
     // LOGIN LOGOUT
     // http://localhost:8080/logout
     @GetMapping("/logout")
-    public String getLogout(HttpServletRequest request, HttpServletResponse response,Model model) {
+    public String getLogout(HttpServletRequest request, HttpServletResponse response, Model model) {
         //Sayfaya giriş yapmış user
-       Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
-       if(authentication!=null){
-          new SecurityContextLogoutHandler().logout(request,response,authentication);
-           model.addAttribute("key_logout", "Çıkış başarılı");
-       }else {
-           model.addAttribute("key_logout", "Çıkış başarısız !!!!");
-       }
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null) {
+            new SecurityContextLogoutHandler().logout(request, response, authentication);
+            model.addAttribute("key_logout", "Çıkış başarılı");
+        } else {
+            model.addAttribute("key_logout", "Çıkış başarısız !!!!");
+        }
         return "/logout";
     }
 
+
+    // USER
+    // http://localhost:8080/user
+    @GetMapping("/user")
+    @ResponseBody
+    public String getUser() {
+        //Sayfaya giriş yapmış user
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null) {
+            System.out.println(authentication.hashCode());
+            return authentication.getName() + " " + authentication.hashCode();
+        }
+        return "Sistemde giriş yapmış kullaıcı bulunmuyor.";
+    }
+
+
+    // PRIVATE
+    // http://localhost:8080/security/private
+    @GetMapping("/security/private")
+    public String getPrivate(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String user = "";
+        if (authentication != null) {
+            user = authentication.getName();
+        }
+        model.addAttribute("system_user", user);
+        return "/private/index";
+    }
 
 
     // AnaDizin
@@ -73,10 +102,5 @@ public class SecurityController {
         return "/success";
     }
 
-    // PRIVATE
-    // http://localhost:8080/security/private
-    @GetMapping("/security/private")
-    public String getPrivate() {
-        return "/private/index";
-    }
+
 }
